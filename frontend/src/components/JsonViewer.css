@@ -1,0 +1,150 @@
+.json-viewer {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 2rem;
+  animation: slideIn 0.4s ease-out;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.viewer-header h2 {
+  color: #e5e5e5;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.metadata-section {
+  margin-bottom: 2rem;
+}
+
+.metadata-section h3 {
+  color: #e5e5e5;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metadata-item {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.metadata-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #a1a1a1;
+  margin-bottom: 0.25rem;
+}
+
+.metadata-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #e5e5e5;
+}
+
+.columns-list {
+  background: transparent;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.columns-list strong {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #e5e5e5;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.columns-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.column-tag {
+  background: transparent;
+  color: #a1a1a1;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  border: 1px solid #2a2a2a;
+  font-weight: 400;
+}
+
+.data-section {
+  margin-top: 2rem;
+}
+
+.data-section h3 {
+  color: #e5e5e5;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.json-container {
+  background: #0f1419;
+  border-radius: 6px;
+  padding: 1rem;
+  max-height: 600px;
+  overflow: auto;
+  border: 1px solid #2a2a2a;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.6;
+}
+
+/* Override react18-json-view dark theme */
+.json-container :global(.json-view) {
+  --json-property: #3b82f6;
+  --json-index: #a1a1a1;
+  --json-number: #10b981;
+  --json-string: #e5e5e5;
+  --json-boolean: #ef4444;
+  --json-null: #a1a1a1;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .json-viewer {
+    padding: 1rem;
+  }
+  
+  .viewer-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .metadata-grid {
+    grid-template-columns: 1fr;
+  }
+}

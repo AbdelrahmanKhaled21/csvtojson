@@ -1,0 +1,42 @@
+.copy-button {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.copy-button:active:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.copy-button.copied {
+  background: #10b981;
+}
+
+.copy-button:disabled {
+  cursor: default;
+}
+
+.button-icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .copy-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

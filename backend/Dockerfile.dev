@@ -1,0 +1,10 @@
+FROM gradle:8-jdk17
+
+WORKDIR /app
+
+COPY build.gradle.kts settings.gradle.kts ./
+RUN gradle dependencies --no-daemon
+
+COPY . .
+
+CMD ["gradle", "run", "--continuous", "--no-daemon"]
